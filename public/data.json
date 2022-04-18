@@ -19,7 +19,7 @@
     "id": "03",
     "name": "Learning Online",
     "price": 25.0,
-    "img": "https://img-web.netlify.app/3.png",
+    "img": "https://img-web.netlify.app/9.png",
     "rate": 3.4,
     "description": "Eleanor Atwood range of online open teaching courses gives existing or and aspiring teachers the chance to improve their skills in professional development."
   },
@@ -35,7 +35,7 @@
     "id": "05",
     "name": "Online Lectures",
     "price": 56.0,
-    "img": "https://img-web.netlify.app/8.png",
+    "img": "https://img-web.netlify.app/3.png",
     "rate": 4.5,
     "description": "Eleanor Atwood provides free and open access to a selection of introductory on courses taught by distinguished Our of teachers, who are experts in their field. "
   },
@@ -67,7 +67,7 @@
     "id": "09",
     "name": "Online Courses",
     "price": 90.0,
-    "img": "https://img-web.netlify.app/9.png",
+    "img": "https://img-web.netlify.app/5.png",
     "rate": 4.8,
     "description": "Our free online courses provide you with an affordable and flexible way to learn new skills study new and emerging topics. Starting learning best interest."
   }

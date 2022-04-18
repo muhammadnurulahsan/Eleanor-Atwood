@@ -59,9 +59,10 @@ const Register = () => {
                 <input
                   onBlur={handleNameBlur}
                   type="text"
+                  className="normal-text"
                   name="name"
                   id="name"
-                  placeholder="Enter Your Full Name"
+                  placeholder="Enter Your Full Name*"
                   required
                 />
               </div>
@@ -72,9 +73,10 @@ const Register = () => {
                 <input
                   onBlur={handleEmailBlur}
                   type="text"
+                  className="normal-text"
                   name="email"
                   id="email"
-                  placeholder="Enter Your Email"
+                  placeholder="Enter Your Email*"
                   required
                 />
               </div>
@@ -84,10 +86,11 @@ const Register = () => {
               <div className="input-wrapper">
                 <input
                   type="password"
+                  className="normal-text"
                   onBlur={handlePasswordBlur}
                   name="password"
                   id="password"
-                  placeholder="Enter your password"
+                  placeholder="Enter your password*"
                   required
                 />
               </div>

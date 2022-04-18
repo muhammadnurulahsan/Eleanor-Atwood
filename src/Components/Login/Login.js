@@ -67,8 +67,9 @@ const Login = () => {
                     onBlur={handleEmailBlur}
                     type="text"
                     name="email"
+                    className="normal-text"
                     id="email"
-                    placeholder="Enter Your Email"
+                    placeholder="Enter Your Email*"
                     required
                   />
                 </div>
@@ -80,8 +81,9 @@ const Login = () => {
                     type="password"
                     onBlur={handlePasswordBlur}
                     name="password"
+                    className="normal-text"
                     id="password"
-                    placeholder="Enter Your Password"
+                    placeholder="Enter Your Password*"
                     required
                   />
                 </div>

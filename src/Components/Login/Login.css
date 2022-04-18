@@ -19,7 +19,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-radius: 10px;
+  border-radius: 20px;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.5);
   padding-bottom: 1rem;
   position: relative;
@@ -38,16 +38,16 @@
 }
 
 .input-field label {
-  font-size: 15px;
+  font-size: 18px;
   margin-bottom: 8px;
   margin-left: 10px;
-  color: #050505;
+  color: #000000 !important;
 }
 
 .input-wrapper {
   padding: 2px;
-  border-radius: 7px;
-  background: #030303;
+  border-radius: 0px;
+  background: rgba(0, 0, 0, 0.377) !important;
 }
 
 .input-field input {
