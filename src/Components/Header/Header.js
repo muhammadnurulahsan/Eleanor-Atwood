@@ -16,13 +16,7 @@ import "./Header.css";
 import { Link, NavLink } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
-import {
-  Button,
-  ButtonGroup,
-  Container,
-  Dropdown,
-  Navbar,
-} from "react-bootstrap";
+import { Button, Container, Navbar } from "react-bootstrap";
 import {
   faFacebook,
   faInstagram,
@@ -86,18 +80,30 @@ const Header = () => {
                   852 45 67
                 </p>
               </div>
-              {user?.displayName ? (
+
+              {user ? (
                 <div className="px-2 d-flex align-items-center custom-color mx-4">
                   <div>
-                    <img
-                      width="40px"
-                      height="40px"
-                      className="me-2 rounded-circle overflow-hidden"
-                      src={user.photoURL}
-                      alt=""
-                    />
+                    <>
+                      {!user?.photoURL ? (
+                        <img
+                          width="40px"
+                          height="40px"
+                          className="me-2 rounded-circle overflow-hidden"
+                          src={avatar}
+                          alt=""
+                        />
+                      ) : (
+                        <img
+                          width="40px"
+                          height="40px"
+                          className="me-2 rounded-circle overflow-hidden"
+                          src={user.photoURL}
+                          alt=""
+                        />
+                      )}
+                    </>
                   </div>
-
                   <div className="login-text">
                     <h6 className="fw-light">{user.displayName}</h6>
                   </div>
@@ -125,7 +131,7 @@ const Header = () => {
                 </div>
               )}
 
-              {!user?.displayName && (
+              {!user && (
                 <Link as={Link} to="/register">
                   <h6 className="px-3 cursor custom-color text-light py-3 mb-0 fw-light mx-4">
                     <FontAwesomeIcon
@@ -138,7 +144,7 @@ const Header = () => {
                 </Link>
               )}
 
-              {user?.displayName && (
+              {user && (
                 <h6
                   onClick={handleSignOut}
                   className="px-3 cursor custom-color py-3 mb-0 fw-light mx-4"
@@ -188,17 +194,11 @@ const Header = () => {
                   Blogs
                 </NavLink>
                 <span className="text-muted p-3 fw-light">|</span>
-                <NavLink
-                  className="text-dark m-2 custom-navlink"
-                  to="/aboutme"
-                >
+                <NavLink className="text-dark m-2 custom-navlink" to="/aboutme">
                   About Me
                 </NavLink>
                 <span className="text-muted p-3 fw-light">|</span>
-                <NavLink
-                  className="text-dark m-2 custom-navlink"
-                  to="/contact"
-                >
+                <NavLink className="text-dark m-2 custom-navlink" to="/contact">
                   Contact
                 </NavLink>
               </div>
@@ -220,28 +220,11 @@ const Header = () => {
                 />
               </div>
 
-              {user?.displayName && (
+              {user && (
                 <div className="me-3 pe-5">
-                  <Dropdown as={ButtonGroup}>
-                    <Button variant="outline-info  py-2 px-1 fs-6">
-                      <Link
-                        className="dropdown text-dark py-2 px-3 fs-6"
-                        to="/mybookings"
-                      >
-                        My Bookings
-                      </Link>
-                    </Button>
-                    <Dropdown.Toggle split variant="outline-info" />
-
-                    <Dropdown.Menu>
-                      <Dropdown.Item as={Link} to="/addyourpackage">
-                        Add Your Package
-                      </Dropdown.Item>
-                      <Dropdown.Item as={Link} to="/manageallbookings">
-                        Manage All Bookings
-                      </Dropdown.Item>
-                    </Dropdown.Menu>
-                  </Dropdown>
+                  <Button variant="outline-secondary rounded-pill shadow-lg py-2 px-4">
+                    Free Courses
+                  </Button>
                 </div>
               )}
             </Navbar.Collapse>

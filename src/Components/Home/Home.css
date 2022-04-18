@@ -1,0 +1,60 @@
+.bg-home {
+  background-image: url(./../../Img/banner.png);
+  height: 600px;
+  background-position: 80% 100%;
+  background-size: 700px;
+  background-repeat: no-repeat;
+  background-color: #f7f6f3;
+}
+
+.normal-text {
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: 300;
+}
+
+.big-text {
+  font-family: "Libre Baskerville", sans-serif;
+  font-size: 58px;
+  line-height: 75.4px;
+  font-weight: 300;
+  font-weight: 500;
+}
+
+.img-size {
+  height: auto;
+  width: 30%;
+}
+.custom-width {
+  width: 390px;
+}
+
+.title-text {
+  font-family: "Libre Baskerville", sans-serif;
+  font-size: 22px;
+  line-height: 30px;
+  font-weight: 500;
+}
+
+.math-text {
+  font-family: "Libre Baskerville", sans-serif;
+  font-size: 42px;
+  line-height: 54.6px;
+  font-weight: 500;
+}
+.home-number-text {
+  color: rgb(156, 56, 12);
+  font-family: "Libre Baskerville", sans-serif;
+  font-size: 40px;
+  line-height: 40px;
+  font-weight: 300;
+}
+
+.home-down-bg {
+  background-image: url(./../../Img/home-banner.png);
+  height: auto;
+  background-position: cover;
+  background-size: 1520px;
+  background-repeat: no-repeat;
+}

@@ -1,54 +1,96 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
 import "./Register.css";
 
 const Register = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
+
+  const handleNameBlur = (e) => {
+    setName(e.target.value);
+  };
+
+  const handleEmailBlur = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handlePasswordBlur = (e) => {
+    setPassword(e.target.value);
+  };
+
+  const [createUserWithEmailAndPassword, user] =
+    useCreateUserWithEmailAndPassword(auth);
+
+  if (user) {
+    navigate("/");
+    console.log("User created", user);
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // if (password !== "" && email !== "") {
+    //   setError("password and email is required");
+    //   return;
+    // } else if (password.length < 6) {
+    //   setError("Password must be at least 6 characters");
+    //   return;
+    // } else {
+    //   setError("");
+    //   console.log("Email: " + email);
+    //   console.log("Password: " + password);
+    // }
+    createUserWithEmailAndPassword(email, password, name);
+  };
 
   return (
     <div className="custom-margin">
       <div className="register-form-container">
         <div className="register-form">
           <h1 className="mt-4">Register</h1>
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="input-field">
               <label htmlFor="name">Name</label>
               <div className="input-wrapper">
-                <input type="text" name="name" id="name" placeholder="Enter Your Full Name" />
+                <input
+                  onBlur={handleNameBlur}
+                  type="text"
+                  name="name"
+                  id="name"
+                  placeholder="Enter Your Full Name"
+                  required
+                />
               </div>
-              {/* {email.error && (
-                <p className='error'>
-                  <AiOutlineExclamationCircle /> {email.error}
-                </p>
-              )} */}
             </div>
             <div className="input-field">
               <label htmlFor="email">Email</label>
               <div className="input-wrapper">
-                <input type="text" name="email" id="email" placeholder="Enter Your Email"/>
+                <input
+                  onBlur={handleEmailBlur}
+                  type="text"
+                  name="email"
+                  id="email"
+                  placeholder="Enter Your Email"
+                  required
+                />
               </div>
-              {/* {email.error && (
-                <p className='error'>
-                  <AiOutlineExclamationCircle /> {email.error}
-                </p>
-              )} */}
             </div>
             <div className="input-field">
               <label htmlFor="password">Password</label>
               <div className="input-wrapper">
                 <input
                   type="password"
-                  // onBlur={handlePassword}
+                  onBlur={handlePasswordBlur}
                   name="password"
                   id="password"
                   placeholder="Enter your password"
+                  required
                 />
               </div>
-              {/* {password.error && (
-                <p className='error'>
-                  <AiOutlineExclamationCircle /> {password.error}
-                </p>
-              )} */}
             </div>
             <button type="submit" className="register-form-submit">
               Register
@@ -61,9 +103,9 @@ const Register = () => {
           </div>
           <p className="redirect">
             Already have an account?
-            <span className="ms-3" onClick={() => navigate("/login")}>
+            <Link className="ms-3" to="/login">
               Please Login!
-            </span>
+            </Link>
           </p>
           <div className=""></div>
         </div>
