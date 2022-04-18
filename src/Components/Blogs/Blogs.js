@@ -53,7 +53,7 @@ const Blogs = () => {
                 <h1 className="blogs-big-text ">
                   What is difference in Authentication and Authorization?
                 </h1>
-                <table class="table normal-text table-striped table-bordered my-5">
+                <table className="table normal-text table-striped table-bordered my-5">
                   <thead>
                     <tr className="title-text text-start">
                       <th className="ps-5" scope="col">

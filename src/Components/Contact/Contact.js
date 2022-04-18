@@ -1,7 +1,34 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import swal from "sweetalert";
 import "./Contact.css";
 
 const Contact = () => {
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (
+      e.target.name.value === "" ||
+      e.target.email.value === "" ||
+      e.target.message.value === ""
+    ) {
+      swal({
+        title: "Please fill up all the fields",
+        text: "Your Input fields is Empty!",
+        icon: "error",
+      });
+    } else {
+      swal({
+        title: "Massage Sent Successfully!",
+        text: "We will get back to you as soon as Possiable!",
+        icon: "success",
+      });
+      navigate("/");
+    }
+  };
+
   return (
     <div className="custom-margin">
       <div className="top-banner">
@@ -16,7 +43,7 @@ const Contact = () => {
         <div className="row-md-cols-2">
           <div className="container">
             <div className="d-flex align-items-center justify-content-evenly">
-              <div >
+              <div>
                 <p className="normal-text">Change Your Life</p>
                 <h1>Contact Me Now</h1>
                 <p className="normal-text mt-4">
@@ -32,15 +59,13 @@ const Contact = () => {
                 <p className="contact-normal-text">E-Atwood@gmail.com</p>
               </div>
 
-
               <div>
-                <div class="card border-0">
-                  <div class="card-body shadow-lg card-custom-padding">
+                <div className="card border-0">
+                  <div className="card-body shadow-lg card-custom-padding">
                     <div className="contact-form-container">
                       <div className="contact-form">
                         <h1 className="text-center">Send Me a Message!</h1>
-                        <p></p>
-                        <form>
+                        <form onSubmit={handleSubmit}>
                           <div className="input-field">
                             <label htmlFor="name">Name</label>
                             <div className="input-wrapper">
@@ -49,7 +74,6 @@ const Contact = () => {
                                 name="name"
                                 id="name"
                                 placeholder="Enter Your Name*"
-                                required
                                 className="normal-text"
                               />
                             </div>
@@ -62,21 +86,21 @@ const Contact = () => {
                                 name="email"
                                 id="email"
                                 placeholder="Enter Your Email*"
-                                required
                                 className="normal-text"
                               />
                             </div>
                           </div>
                           <div className="msg-input-field my-3">
-                            <label className="ms-2 mb-2" htmlFor="text">Massage</label>
+                            <label className="ms-2 mb-2" htmlFor="text">
+                              Massage
+                            </label>
                             <div className="msg-input-wrapper">
                               <textarea
                                 type="text"
-                                name="text"
+                                name="message"
                                 id="text"
                                 className="normal-text"
                                 placeholder="Enter Your Massage*"
-                                required
                               />
                             </div>
                           </div>

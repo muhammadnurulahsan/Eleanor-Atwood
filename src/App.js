@@ -30,7 +30,14 @@ function App() {
         <Route path="/login" element={<Login />}></Route>
         <Route path="/resetpassword" element={<ResetPassword />}></Route>
         <Route path="/register" element={<Register />}></Route>
-        <Route path="/checkout" element={<CheckOut />}></Route>
+        <Route
+          path="/checkout"
+          element={
+            <RequireAuth>
+              <CheckOut />
+            </RequireAuth>
+          }
+        ></Route>
         <Route
           path="/services/:id"
           element={

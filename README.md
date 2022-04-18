@@ -22,6 +22,8 @@ What technology or assets I have used for building this website.
 
 • Sweet Alert
 
+• React Testify
+
 • React Bootstrap
 
 • React Router Dom

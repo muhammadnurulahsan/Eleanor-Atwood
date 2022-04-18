@@ -46,7 +46,7 @@ const ServiceDetail = () => {
             </div>
             <div className="pt-3">
               <h6 className="title-text">
-                Test Fee: ${service?.admissionPrice}
+                Admission Fee: ${service?.admissionPrice}
               </h6>
             </div>
             <div className="d-flex pt-3">
@@ -57,7 +57,7 @@ const ServiceDetail = () => {
                 onClick={() => navigate("/checkout")}
                 className="py-2 px-4 my-3 btn btn-outline-secondary rounded-pill shadow-lg none"
               >
-                Order Now
+                Add to Cart
               </button>
             </div>
           </div>
