@@ -5,9 +5,16 @@ import img1 from "./../../Img/1.png";
 import img2 from "./../../Img/2.png";
 import img3 from "./../../Img/3.png";
 import math from "./../../Img/math.jpg";
-import down from "./../../Img/down.png";
+import about from "./../../Img/about.jpg";
 import useServices from "../../Hooks/useServices";
 import ServicesCard from "../ServicesCard/ServicesCard";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFacebookSquare,
+  faInstagram,
+  faLinkedin,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
 
 const Home = () => {
   const [services] = useServices();
@@ -147,7 +154,50 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <img width="1519px" src={down} alt="" />
+
+      <div className="container mb-5 py-5">
+        <div className="d-flex align-items-center justify-content-evenly">
+          <div className="ms-5">
+            <p className="normal-text">About Me</p>
+            <h2 className="math-text text-line">
+              Math Teacher, Private <br /> Tutoring & <br /> Consulting.
+            </h2>
+            <p className="normal-text my-4">
+              Students enjoy learning from and feel comfortable with someone who
+              can clearly tell them how they can master difficult content and
+              conquer their challenges. Math tuition guaranteed good review
+              improve grades committed qualified I lead a team of tuition
+              consultants and coordinators who are former MOE teachers.
+            </p>
+            <div className="footer-col">
+              <div className="social-links">
+                <a href="#icon">
+                  <FontAwesomeIcon icon={faFacebookSquare} size="lg" />
+                </a>
+                <a href="#icon">
+                  <FontAwesomeIcon icon={faTwitter} size="lg" />
+                </a>
+                <a href="#icon">
+                  <FontAwesomeIcon icon={faInstagram} size="lg" />
+                </a>
+                <a href="#icon">
+                  <FontAwesomeIcon icon={faLinkedin} size="lg" />
+                </a>
+              </div>
+              <button
+                onClick={() => navigate("/aboutme")}
+                className="px-5 py-3 mt-4 btn btn-outline-danger rounded-pill shadow-lg"
+              >
+                About Me
+              </button>
+            </div>
+          </div>
+          <div className="mx-5 ">
+            <img width="560px" height="600px" src={about} alt="" />
+          </div>
+        </div>
+      </div>
+      <div className="down-banner"></div>
     </div>
   );
 };
