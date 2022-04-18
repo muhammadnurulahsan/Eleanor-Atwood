@@ -6,7 +6,7 @@ import "./Services.css";
 const Services = () => {
   const [services] = useServices();
   return (
-    <div className="custom-margin">
+    <div>
       <div className="top-banner">
         <div className="container pt-5">
           <h1 className="big-text ms-4">Services</h1>

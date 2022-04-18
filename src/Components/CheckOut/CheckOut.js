@@ -34,7 +34,7 @@ const CheckOut = () => {
   };
 
   return (
-    <div className="custom-margin">
+    <div>
       <div className="top-banner">
         <div className="container pt-5">
           <h1 className="big-text ms-4">Checkout</h1>
@@ -113,9 +113,9 @@ const CheckOut = () => {
                         <div className="contact-form">
                           <h6 className="title-text m-0">Courses 03</h6>
                           <div className="my-3">
-                            <div className="">
+                            <div>
                               <div className="d-flex align-items-center justify-content-between">
-                                <div className="">
+                                <div>
                                   <img
                                     className="rounded-3 shadow"
                                     width="180px"
@@ -139,7 +139,7 @@ const CheckOut = () => {
                             </div>
                             <div className="my-4">
                               <div className="d-flex align-items-center justify-content-between">
-                                <div className="">
+                                <div>
                                   <img
                                     className="rounded-3 shadow"
                                     width="180px"
@@ -159,7 +159,7 @@ const CheckOut = () => {
                                 </div>
                               </div>
                             </div>
-                            <div className="">
+                            <div>
                               <div className="d-flex align-items-center justify-content-between">
                                 <div className="rounded-3">
                                   <img

@@ -59,7 +59,7 @@ const Register = () => {
   };
 
   return (
-    <div className="custom-margin">
+    <div>
       <div className="register-form-container">
         <div className="register-form">
           <h1 className="mt-4">Register</h1>
@@ -121,7 +121,7 @@ const Register = () => {
               Please Login!
             </Link>
           </p>
-          <div className=""></div>
+          <div></div>
         </div>
         <div className="register-bg-img"></div>
       </div>

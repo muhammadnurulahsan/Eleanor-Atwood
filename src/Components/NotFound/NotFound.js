@@ -1,12 +1,12 @@
 import React from "react";
-import "./NotFound.css"; 
+import "./NotFound.css";
 import { useNavigate } from "react-router-dom";
 
 const NotFound = () => {
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   return (
-    <div className="custom-margin">
+    <div>
       <div className="top-banner"></div>
       <div className="text-center">
         <h2 className="not-found-text">Page not found</h2>

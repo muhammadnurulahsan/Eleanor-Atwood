@@ -16,7 +16,7 @@ const ServiceDetail = () => {
   }, [id]);
 
   return (
-    <div className="custom-margin">
+    <div>
       <div className="top-banner">
         <div className="container pt-5">
           <h1 className="big-text ms-4">Services Details</h1>
@@ -32,7 +32,7 @@ const ServiceDetail = () => {
       <div className="container py-5 my-5">
         <div className="d-flex justify-content-evenly">
           <div className="bg-white text-dark text-start about1-div">
-            <h2 className="">Service Details</h2> <hr className="me-5" />
+            <h2>Service Details</h2> <hr className="me-5" />
             <h5 className="py-2 normal-text">{service?.description}</h5>
             <div className="pt-3">
               <h6 className="title-text">

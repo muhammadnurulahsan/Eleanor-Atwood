@@ -9,10 +9,10 @@ const ServicesCard = ({ services }) => {
 
   const { id, name, img, price, rate, description } = services;
   return (
-    <div className="">
+    <div>
       <div className="col ms-md-0 mt-5 px-0 text-start">
         <div className="card h-100 shadow-lg  border-0 ms-auto custom-width">
-          <div className="">
+          <div>
             <img
               src={img}
               className="card-img-top custom-img-margin img-size"

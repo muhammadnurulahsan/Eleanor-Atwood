@@ -26,7 +26,7 @@ const ResetPassword = () => {
   };
 
   return (
-    <div className="custom-margin">
+    <div>
       <div className="reset-form-container py-5">
         <div className="reset-form my-5">
           <h1 className="mt-4">Reset Password</h1>

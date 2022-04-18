@@ -32,7 +32,8 @@ const Header = () => {
   };
 
   return (
-    <div className="fixed-top">
+    <div className="sticky-top">
+      {/* Top header */}
       <div className="header-text fw-light text-white top-font">
         <div className="container d-flex align-items-center justify-content-between">
           <div className="d-flex align-items-center">
@@ -161,8 +162,9 @@ const Header = () => {
           </div>
         </div>
       </div>
+      {/* Top header */}
 
-      <div className="">
+      <div>
         <Navbar className="p-1 nav-color " expand="lg">
           <Container fluid>
             <Navbar.Brand className="text-dark d-flex cursor">

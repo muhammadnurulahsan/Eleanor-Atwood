@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import "./Login.css";
 import gImg from "../../Img/google.png";
 import gitImg from "./../../Img/github.png";
@@ -22,7 +22,7 @@ const Login = () => {
   const location = useLocation();
   let from = location.state?.from?.pathname || "/";
 
-  const [signInWithEmailAndPassword, user, loading, error] =
+  const [signInWithEmailAndPassword, user, loading, userError] =
     useSignInWithEmailAndPassword(auth);
 
   const [signInWithFacebook, fbUser, fbLoading, fbError] =
@@ -34,14 +34,24 @@ const Login = () => {
   const [signInWithGoogle, googleUser, googleLoading, googleError] =
     useSignInWithGoogle(auth);
 
-  if (fbError || gitError || googleError) {
+  useEffect(() => {
+    if (user || fbUser || gitUser || googleUser) {
+      swal({
+        title: "Login Successful!",
+        text: "Welcome back!",
+        icon: "success",
+      });
+      navigate(from, { replace: true });
+    }
+  }, [user, fbUser, gitUser, googleUser, navigate, from]);
+
+  if (userError || fbError || gitError || googleError) {
     swal({
-      title: 
-      `${ 
-        error?.message || 
-        fbError?.message || 
-        gitError?.message || 
-        googleError?.message 
+      title: `${
+        userError?.message ||
+        fbError?.message ||
+        gitError?.message ||
+        googleError?.message
       }`,
       icon: "error",
     });
@@ -51,39 +61,15 @@ const Login = () => {
     return <Loading />;
   }
 
-  if (user || fbUser || gitUser || googleUser) {
-    navigate(from, { replace: true });
-  }
-  if (fbUser || gitUser || googleUser) {
-    swal({
-      title: "Login Successful!",
-      text: "Welcome back!",
-      icon: "success",
-    });
-  }
-
   const handleSubmit = (e) => {
     e.preventDefault();
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
     signInWithEmailAndPassword(email, password);
-    if (email && password) {
-      swal({
-        title: "Login Successful!",
-        text: "Welcome back!",
-        icon: "success",
-      });
-    }
-    if (error) {
-      swal({
-        title: "Password must be at least 6 characters long.",
-        icon: "error",
-      });
-    }
   };
 
   return (
-    <div className="custom-margin">
+    <div>
       <div className="bg-img">
         <div className="login-form-container">
           <div className="login-form">
