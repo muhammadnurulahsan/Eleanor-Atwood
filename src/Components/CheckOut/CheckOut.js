@@ -2,8 +2,8 @@ import React from "react";
 
 const CheckOut = () => {
   return (
-    <div>
-      <h2>this is checkout</h2>
+    <div className="custom-margin">
+      <h1>this is checkout</h1>
     </div>
   );
 };

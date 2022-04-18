@@ -28,18 +28,18 @@ function App() {
         <Route path="/aboutme" element={<AboutMe />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
         <Route path="/login" element={<Login />}></Route>
+        <Route path="/resetpassword" element={<ResetPassword />}></Route>
+        <Route path="/register" element={<Register />}></Route>
+        <Route path="/checkout" element={<CheckOut />}></Route>
         <Route
           path="/services/:id"
           element={
             <RequireAuth>
-              <CheckOut />
+              <ServiceDetail />
             </RequireAuth>
           }
         ></Route>
-        <Route path="/resetpassword" element={<ResetPassword />}></Route>
-        <Route path="/register" element={<Register />}></Route>
         <Route path="*" element={<NotFound />} />
-        <Route path="/services/:serviceId" element={<ServiceDetail />}></Route>
       </Routes>
       <Footer></Footer>
     </div>

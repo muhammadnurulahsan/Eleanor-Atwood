@@ -21,7 +21,7 @@ const Footer = () => {
             </h2>
 
             <div className="px-md-5 px-3 flex-grow-1 d-flex align-items-center mt-2">
-              <Button variant="btn btn-outline-light text-dark py-2 fs-5 px-4">
+              <Button variant="btn btn-outline-light text-dark py-3 fs-5 px-4 shadow-lg none rounded-pill">
                 Make an Appointment
               </Button>
             </div>

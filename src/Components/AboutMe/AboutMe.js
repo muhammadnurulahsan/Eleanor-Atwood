@@ -26,6 +26,7 @@ const AboutMe = () => {
                   </div>
                   <div className="ms-5 mt-5">
                     <h1>Assalamualaikum Warahmatullahi Wabarakatuh</h1>
+                    <h5 className="pt-3 title-text">Muhammad Nurul Ahsan</h5>
                     <p className="normal-text py-3">
                       Alhamdulillah I'm a student of Qawmi Madrasha at Arabic
                       University of Dhaka. also a student of programming hero

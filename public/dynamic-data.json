@@ -1,0 +1,83 @@
+[
+  {
+    "id": "01",
+    "serviceName": "Study Support",
+    "servicePrice": 186,
+    "admissionPrice": 600,
+    "totalCost": 786,
+    "description": "Join a Study Support session on topics such as: online learning, English is or language development, improving your academic writing. A range of workshops.",
+    "img": "https://user-pic.netlify.app/1.jpg"
+  },
+  {
+    "id": "02",
+    "serviceName": "Academic Skills",
+    "servicePrice": 175,
+    "admissionPrice": 600,
+    "totalCost": 775,
+    "description": "Academic skills are the abilities, to and strategies habits that can help learners succeed in an academic setting. This on workshop will help students is theme.",
+    "img": "https://user-pic.netlify.app/2.jpg"
+  },
+  {
+    "id": "03",
+    "serviceName": "Learning Online",
+    "servicePrice": 125,
+    "admissionPrice": 600,
+    "totalCost": 725,
+    "description": "Eleanor Atwood range of online open teaching courses gives existing or and aspiring teachers the chance to improve their skills in professional development.",
+    "img": "https://user-pic.netlify.app/3.jpg"
+  },
+  {
+    "id": "04",
+    "serviceName": "Private Tutoring",
+    "servicePrice": 145,
+    "admissionPrice": 600,
+    "totalCost": 745,
+    "description": "1 to 1 Home Tuition & Online Tuition. All Subjects. Pri, Sec, JC, IP, IB. All Locations. Find Suitable Private Tutor Within Your Budget. Affordable Tuition Bests Rates.",
+    "img": "https://user-pic.netlify.app/4.jpg"
+  },
+  {
+    "id": "05",
+    "serviceName": "Online Lectures",
+    "servicePrice": 156,
+    "admissionPrice": 600,
+    "totalCost": 756,
+    "description": "Eleanor Atwood provides free and open access to a selection of introductory on courses taught by distinguished Our of teachers, who are experts in their field.",
+    "img": "https://user-pic.netlify.app/5.jpg"
+  },
+  {
+    "id": "06",
+    "serviceName": "Consulting",
+    "servicePrice": 173,
+    "admissionPrice": 600,
+    "totalCost": 773,
+    "description": "consulting is the practice of helping to organizations to improve their Our in performance. Organizations may draw upon the and services of management.",
+    "img": "https://user-pic.netlify.app/6.jpg"
+  },
+  {
+    "id": "07",
+    "serviceName": "Lessons for Kids",
+    "servicePrice": 167,
+    "admissionPrice": 600,
+    "totalCost": 767,
+    "description": "Lessons Designed To Make Your Child Love English. Paced Lessons. See on All Your Improvement In 6 Months.10,000 Kids Taught. Best Learn English is Free.",
+    "img": "https://user-pic.netlify.app/7.jpg"
+  },
+  {
+    "id": "08",
+    "serviceName": "Remote Learning",
+    "servicePrice": 187,
+    "admissionPrice": 600,
+    "totalCost": 787,
+    "description": "Platform To Help Build Community And Provide The Highest Quality Experience. Single,Unified Platform That Facilitates Student Interactions. Get Started Now!",
+    "img": "https://user-pic.netlify.app/8.jpg"
+  },
+  {
+    "id": "09",
+    "serviceName": "Online Courses",
+    "servicePrice": 190,
+    "admissionPrice": 600,
+    "totalCost": 790,
+    "description": "Our free online courses provide you with an affordable and flexible way to learn new skills study new and emerging topics. Starting learning best interest.",
+    "img": "https://user-pic.netlify.app/9.jpg"
+  }
+]
