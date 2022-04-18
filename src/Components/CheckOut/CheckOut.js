@@ -131,9 +131,9 @@ const CheckOut = () => {
                                     Eleanor Atwood
                                   </h6>
                                   <h6 className="py-2 course-name">
-                                    Academic Skills
+                                    Study Support
                                   </h6>
-                                  <h6 className="price-text">$ 760</h6>
+                                  <h6 className="price-text">$ 786</h6>
                                 </div>
                               </div>
                             </div>
@@ -154,8 +154,8 @@ const CheckOut = () => {
                                     </span>{" "}
                                     Eleanor Atwood
                                   </h6>
-                                  <h6 className="py-2">Learning Online</h6>
-                                  <h6 className="price-text">$ 760</h6>
+                                  <h6 className="py-2">Academic Skills</h6>
+                                  <h6 className="price-text">$ 775</h6>
                                 </div>
                               </div>
                             </div>
@@ -176,8 +176,8 @@ const CheckOut = () => {
                                     </span>{" "}
                                     Eleanor Atwood
                                   </h6>
-                                  <h6 className="py-2">Private Tutoring</h6>
-                                  <h6 className="price-text">$ 760</h6>
+                                  <h6 className="py-2">Learning Online</h6>
+                                  <h6 className="price-text">$ 725</h6>
                                 </div>
                               </div>
                             </div>

@@ -29,13 +29,13 @@ const AboutMe = () => {
                     <h5 className="pt-3 title-text">Muhammad Nurul Ahsan</h5>
                     <p className="normal-text py-3">
                       Alhamdulillah I'm a student of Qawmi Madrasha at Arabic
-                      University of Dhaka. also a student of programming hero
-                      batch-5 with a passion for web development. I am currently
-                      learning React.js and Node.js.
+                      University of Dhaka. also I'm a student of programming
+                      hero batch-5 with a passion for web development. I'm
+                      currently learning React.js and Node.js.
                     </p>
                     <p className="normal-text">
                       I'm a Jr. Full Stack Web Developer. I Like To Upgrade My
-                      Self Day By Day. I Have A Plan For Next 6 Month. I Will
+                      Self Day By Day. I Have A Plan For Next 6 Months. I Will
                       Learn React.js. After That I Will Start Learning Node.js
                       along with TypeScript. Then I Will Dive Into Node.js.
                       Beside These I Have Good Interest In Python and Django. I
@@ -52,7 +52,7 @@ const AboutMe = () => {
                     <p className="normal-text py-3">
                       I want to be a Senior Full Stack professional web
                       developer. The main objective when working as a developer
-                      is to be productive and deliver value to the company.To
+                      is to be productive and deliver value to the company. To
                       gain confidence and fame using my potential in the field
                       of “Web Development”, and express my innovative creative
                       skills for self and company growth.

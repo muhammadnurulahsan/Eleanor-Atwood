@@ -39,7 +39,7 @@ const ServicesCard = ({ services }) => {
                 onClick={() => navigate(`/services/${id}`)}
                 className="btn btn-outline-success px-5 mb-2 rounded-pill shadow-lg"
               >
-                Book Now
+                See Details
               </button>
             </div>
           </div>

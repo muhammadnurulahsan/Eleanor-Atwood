@@ -148,7 +148,7 @@ const Home = () => {
                 className="btn btn-outline-secondary py-2 px-5 fs-5 shadow-lg rounded-pill"
                 onClick={() => navigate("/services")}
               >
-                See All Reviews
+                See All Services
               </button>
             </div>
           </div>
