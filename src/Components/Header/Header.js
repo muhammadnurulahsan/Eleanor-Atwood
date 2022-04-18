@@ -105,7 +105,7 @@ const Header = () => {
                     </>
                   </div>
                   <div className="login-text">
-                    <h6 className="fw-light">{user.displayName}</h6>
+                    <h6 className="fw-light">{user?.displayName}</h6>
                   </div>
                 </div>
               ) : (

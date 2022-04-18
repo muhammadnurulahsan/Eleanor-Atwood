@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef } from "react";
 import "./Login.css";
 import gImg from "../../Img/google.png";
 import gitImg from "./../../Img/github.png";
@@ -11,47 +11,76 @@ import {
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
+import Loading from "../Loading/Loading";
+import "react-toastify/dist/ReactToastify.css";
+import swal from "sweetalert";
 
 const Login = () => {
-  const [signInWithGoogle, googleUser, googleLoading1, googleError] =
-    useSignInWithGoogle(auth);
-  const [signInWithGithub, gitUser, gitLoading, gitError] =
-    useSignInWithGithub(auth);
-  const [signInWithFacebook, facebookUser, facebookLoading, facebookError] =
-    useSignInWithFacebook(auth);
-
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
+  const emailRef = useRef("");
+  const passwordRef = useRef("");
   const navigate = useNavigate();
   const location = useLocation();
-  const from = location.state?.from?.pathname || "/";
+  let from = location.state?.from?.pathname || "/";
 
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
 
-  const handleEmailBlur = (e) => {
-    setEmail(e.target.value);
-  };
+  const [signInWithFacebook, fbUser, fbLoading, fbError] =
+    useSignInWithFacebook(auth);
 
-  const handlePasswordBlur = (e) => {
-    setPassword(e.target.value);
-  };
+  const [signInWithGithub, gitUser, gitLoading, gitError] =
+    useSignInWithGithub(auth);
+
+  const [signInWithGoogle, googleUser, googleLoading, googleError] =
+    useSignInWithGoogle(auth);
+
+  if (fbError || gitError || googleError) {
+    swal({
+      title: 
+      `${ 
+        error?.message || 
+        fbError?.message || 
+        gitError?.message || 
+        googleError?.message 
+      }`,
+      icon: "error",
+    });
+  }
+
+  if (loading || fbLoading || gitLoading || googleLoading) {
+    return <Loading />;
+  }
+
+  if (user || fbUser || gitUser || googleUser) {
+    navigate(from, { replace: true });
+  }
+  if (fbUser || gitUser || googleUser) {
+    swal({
+      title: "Login Successful!",
+      text: "Welcome back!",
+      icon: "success",
+    });
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const email = emailRef.current.value;
+    const password = passwordRef.current.value;
     signInWithEmailAndPassword(email, password);
-    console.log("Email: " + email);
-    console.log("Password: " + password);
+    if (email && password) {
+      swal({
+        title: "Login Successful!",
+        text: "Welcome back!",
+        icon: "success",
+      });
+    }
+    if (error) {
+      swal({
+        title: "Password must be at least 6 characters long.",
+        icon: "error",
+      });
+    }
   };
-
-  if (googleUser || gitUser || facebookUser) {
-    navigate("/");
-  }
-
-  if (user) {
-    navigate(from, { replace: true });
-  }
 
   return (
     <div className="custom-margin">
@@ -64,7 +93,7 @@ const Login = () => {
                 <label htmlFor="email">Email</label>
                 <div className="input-wrapper">
                   <input
-                    onBlur={handleEmailBlur}
+                    ref={emailRef}
                     type="text"
                     name="email"
                     className="normal-text"
@@ -79,7 +108,7 @@ const Login = () => {
                 <div className="input-wrapper">
                   <input
                     type="password"
-                    onBlur={handlePasswordBlur}
+                    ref={passwordRef}
                     name="password"
                     className="normal-text"
                     id="password"
@@ -88,6 +117,12 @@ const Login = () => {
                   />
                 </div>
               </div>
+              <p className="my-2">
+                Forget your Password?
+                <Link className="ms-5 ps-5" to="/resetpassword">
+                  Reset Password
+                </Link>
+              </p>
               <button type="submit" className="login-form-submit">
                 Login
               </button>
@@ -123,12 +158,11 @@ const Login = () => {
               </button>
             </div>
             <p className="redirect">
-              Don't have an account?{" "}
+              Don't have an account?
               <Link className="ms-3" to="/register">
                 Please Register!
               </Link>
             </p>
-            <div className=""></div>
           </div>
         </div>
       </div>

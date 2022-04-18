@@ -48,7 +48,7 @@
 .input-wrapper {
   padding: 2px;
   border-radius: 7px;
-  background: #030303;
+  border: 3px solid #9F9F9F;
 }
 
 .input-field input {

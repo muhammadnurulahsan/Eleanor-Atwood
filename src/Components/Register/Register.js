@@ -1,50 +1,61 @@
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import React, { useRef } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import {
+  useCreateUserWithEmailAndPassword,
+  useUpdateProfile,
+} from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import "./Register.css";
+import Loading from "../Loading/Loading";
+import swal from "sweetalert";
 
 const Register = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [name, setName] = useState("");
-  const [error, setError] = useState("");
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
-  const handleNameBlur = (e) => {
-    setName(e.target.value);
-  };
+  const [createUserWithEmailAndPassword, user, loading, error] =
+    useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+  const [updateProfile, updating] = useUpdateProfile(auth);
 
-  const handleEmailBlur = (e) => {
-    setEmail(e.target.value);
-  };
+  const nameRef = useRef("");
+  const emailRef = useRef("");
+  const passwordRef = useRef("");
 
-  const handlePasswordBlur = (e) => {
-    setPassword(e.target.value);
-  };
-
-  const [createUserWithEmailAndPassword, user] =
-    useCreateUserWithEmailAndPassword(auth);
-
-  if (user) {
-    navigate("/");
-    console.log("User created", user);
+  if (loading || updating) {
+    return <Loading />;
   }
 
-  const handleSubmit = (e) => {
+  if (error) {
+    swal({
+      title: `${error?.message}`,
+      icon: "error",
+    });
+  }
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // if (password !== "" && email !== "") {
-    //   setError("password and email is required");
-    //   return;
-    // } else if (password.length < 6) {
-    //   setError("Password must be at least 6 characters");
-    //   return;
-    // } else {
-    //   setError("");
-    //   console.log("Email: " + email);
-    //   console.log("Password: " + password);
-    // }
-    createUserWithEmailAndPassword(email, password, name);
+
+    const name = nameRef.current.value;
+    const email = emailRef.current.value;
+    const password = passwordRef.current.value;
+
+    if (password.length >= 6) {
+      await createUserWithEmailAndPassword(email, password);
+      await updateProfile({ displayName: name });
+      // window.location.href = from;
+      navigate(from);
+      swal({
+        title: "Account created!",
+        text: "Please check your email to verify your account.",
+        icon: "success",
+      });
+    } else {
+      swal({
+        title: "Password must be at least 6 characters long.",
+        icon: "error",
+      });
+    }
   };
 
   return (
@@ -57,7 +68,7 @@ const Register = () => {
               <label htmlFor="name">Name</label>
               <div className="input-wrapper">
                 <input
-                  onBlur={handleNameBlur}
+                  ref={nameRef}
                   type="text"
                   className="normal-text"
                   name="name"
@@ -71,7 +82,7 @@ const Register = () => {
               <label htmlFor="email">Email</label>
               <div className="input-wrapper">
                 <input
-                  onBlur={handleEmailBlur}
+                  ref={emailRef}
                   type="text"
                   className="normal-text"
                   name="email"
@@ -87,7 +98,7 @@ const Register = () => {
                 <input
                   type="password"
                   className="normal-text"
-                  onBlur={handlePasswordBlur}
+                  ref={passwordRef}
                   name="password"
                   id="password"
                   placeholder="Enter your password*"
